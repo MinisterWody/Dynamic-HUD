@@ -1,0 +1,16 @@
+# Native plugin intermediates
+Plugin/build/
+
+# Analyzer output
+Plugin/*.plist
+
+# Generated release archive
+Dynamic HUD *.zip
+
+# Python/editor noise
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
