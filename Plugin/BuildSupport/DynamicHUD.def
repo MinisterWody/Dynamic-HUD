@@ -1,0 +1,6 @@
+LIBRARY DynamicHUD
+EXPORTS
+    F4SEPlugin_Preload
+    F4SEPlugin_Query
+    F4SEPlugin_Load
+    F4SEPlugin_Version DATA

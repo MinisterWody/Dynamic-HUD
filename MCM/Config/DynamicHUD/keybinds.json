@@ -1,0 +1,13 @@
+{
+  "modName": "DynamicHUD",
+  "keybinds": [
+    {
+      "id": "DiscoverModdedHUDElements",
+      "desc": "Discover Modded HUD Elements",
+      "action": {
+        "type": "RunConsoleCommand",
+        "command": ""
+      }
+    }
+  ]
+}
