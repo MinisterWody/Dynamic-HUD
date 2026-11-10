@@ -178,9 +178,10 @@ of active UI and writes disabled configuration INIs to:
 
     Data\MCM\Config\DynamicHUD\CustomElements
 
-Discovery never overwrites an existing generated INI. Newly generated files can
-be edited while the game is running and are live-reloaded through the existing
-MCM settings watcher.
+Discovery never overwrites an existing generated INI. Standalone custom menus
+produce one configuration entry per native menu. Newly generated files can be
+edited while the game is running and are live-reloaded through the existing MCM
+settings watcher.
 
 A discovered entry is not automatically a suitable gameplay HUD target. See:
 

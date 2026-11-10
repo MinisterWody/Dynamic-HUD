@@ -104,10 +104,12 @@ Power Armor HUD
     group is bound only when its complete target set is available.
 
 Custom HUD
-    Standalone custom HUD menus use the native IMenu display-permission gate.
-    Custom children hosted by HUDMenu, PowerArmorHUDMenu, or another known
-    native Fallout host use a conservative GFx child-level fallback instead of
-    hiding the host menu wholesale. Missing or stale targets fail open.
+    Standalone custom HUD menus use the native IMenu display-permission gate
+    with one effective controller per native menu. Suppression is revalidated
+    while active so recreated menus or source-side visibility restores are
+    reacquired/reasserted. Custom children hosted by HUDMenu,
+    PowerArmorHUDMenu, or another known native Fallout host use a conservative
+    GFx child-level fallback instead of hiding the host menu wholesale.
 
 Button Hints
     ButtonBarMenu is handled separately. Dynamic HUD changes visibility only for
@@ -176,7 +178,8 @@ Custom HUD Discovery
 
 Discovery is one-shot and dormant until its MCM keybind is pressed. It inspects
 active UI, writes new CustomElements INIs with CREATE_NEW semantics, and never
-overwrites an existing generated file.
+overwrites an existing generated file. Standalone custom menus produce one
+configuration target per native menu.
 
 HUDMenu and PowerArmorHUDMenu are treated as native hosts rather than standalone
 custom menus. Known native host elements are filtered while supported addon
