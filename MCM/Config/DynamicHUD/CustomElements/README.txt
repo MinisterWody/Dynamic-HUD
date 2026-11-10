@@ -133,17 +133,18 @@ source mod to display content that it would normally hide.
 Show While Conditions
 ---------------------
 
-Custom entries support the same 14 Show While conditions as the built-in HUD:
+Custom entries support the same 15 Show While conditions as the built-in HUD:
 
-    Weapon Drawn      Aiming             Sprinting
-    Sneaking          Combat             VATS
-    First Person      Third Person       Power Armor
-    Radiation         Low Health         Low AP
-    Activate          Command
+    Weapon Drawn      Weapon Holstered   Aiming
+    Sprinting         Sneaking            Combat
+    VATS              First Person        Third Person
+    Power Armor       Radiation           Low Health
+    Low AP            Activate            Command
 
 The corresponding generated settings are:
 
     bWhenWeaponDrawn
+    bWhenWeaponHolstered
     bWhenAiming
     bWhenSprinting
     bWhenSneaking

@@ -128,11 +128,12 @@ Custom HUD entries.
 
 Automatic mode evaluates any selected Show While conditions:
 
-    Weapon Drawn      Aiming             Sprinting
-    Sneaking          Combat             VATS
-    First Person      Third Person       Power Armor
-    Radiation         Low Health         Low AP
-    Activate          Command
+    Weapon Drawn      Weapon Holstered   Aiming
+    Sprinting         Sneaking            Combat
+    VATS              First Person        Third Person
+    Power Armor       Radiation           Low Health
+    Low AP            Activate            Command
+
 
 In automatic HIDE mode, Dynamic HUD may suppress an element while the selected
 conditions are inactive, but an open gate leaves positive visibility to the
