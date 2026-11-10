@@ -13,7 +13,7 @@ The mod covers:
 - 7 logical Power Armor HUD groups
 - Button Hints for Pip-Boy, workbench, VATS, and menu contexts
 - Supported custom/modded HUD elements discovered in-game
-- 14 configurable Show While conditions, per-element hide delay, and hotkeys
+- 15 configurable Show While conditions, per-element hide delay, and hotkeys
 
 Configuration is provided through Mod Configuration Menu.
 
@@ -121,11 +121,12 @@ visibility policy, or use automatic control through MCM.
 
 Automatic control uses any combination of these Show While conditions:
 
-    Weapon Drawn      Aiming             Sprinting
-    Sneaking          Combat             VATS
-    First Person      Third Person       Power Armor
-    Radiation         Low Health         Low AP
-    Activate          Command
+    Weapon Drawn      Weapon Holstered   Aiming
+    Sprinting         Sneaking            Combat
+    VATS              First Person        Third Person
+    Power Armor       Radiation           Low Health
+    Low AP            Activate            Command
+
 
 Each element can also use a hide delay and an optional hotkey. When multiple
 elements share the same hotkey binding, Dynamic HUD keeps their toggle state in
@@ -177,9 +178,10 @@ of active UI and writes disabled configuration INIs to:
 
     Data\MCM\Config\DynamicHUD\CustomElements
 
-Discovery never overwrites an existing generated INI. Newly generated files can
-be edited while the game is running and are live-reloaded through the existing
-MCM settings watcher.
+Discovery never overwrites an existing generated INI. Standalone custom menus
+produce one configuration entry per native menu. Newly generated files can be
+edited while the game is running and are live-reloaded through the existing MCM
+settings watcher.
 
 A discovered entry is not automatically a suitable gameplay HUD target. See:
 

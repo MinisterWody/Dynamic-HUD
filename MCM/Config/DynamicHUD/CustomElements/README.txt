@@ -72,13 +72,15 @@ When HIDE is active, Dynamic HUD removes the menu's captured native display
 permission. When SHOW is active, Dynamic HUD restores that permission and lets
 the source mod decide its natural visibility and content.
 
-For one standalone custom HUD menu:
+Standalone custom HUD menus are discovered and configured as one entry per
+native menu. Dynamic HUD does not manage that menu's individual MovieClips.
 
-- Enable one representative INI for that native menu.
-- Do not enable multiple INIs that point to the same standalone menu.
-- Dynamic HUD does not manage that menu's individual MovieClips.
-- The source mod remains responsible for its own animation, content, and
-  internal visibility after Dynamic HUD releases suppression.
+If older discovery output contains multiple INIs for the same standalone menu,
+Dynamic HUD uses one effective controller for that menu and ignores the
+duplicates.
+
+The source mod remains responsible for its own animation, content, and internal
+visibility after Dynamic HUD releases suppression.
 
 
 Children of Native Fallout Menus
@@ -133,17 +135,18 @@ source mod to display content that it would normally hide.
 Show While Conditions
 ---------------------
 
-Custom entries support the same 14 Show While conditions as the built-in HUD:
+Custom entries support the same 15 Show While conditions as the built-in HUD:
 
-    Weapon Drawn      Aiming             Sprinting
-    Sneaking          Combat             VATS
-    First Person      Third Person       Power Armor
-    Radiation         Low Health         Low AP
-    Activate          Command
+    Weapon Drawn      Weapon Holstered   Aiming
+    Sprinting         Sneaking            Combat
+    VATS              First Person        Third Person
+    Power Armor       Radiation           Low Health
+    Low AP            Activate            Command
 
 The corresponding generated settings are:
 
     bWhenWeaponDrawn
+    bWhenWeaponHolstered
     bWhenAiming
     bWhenSprinting
     bWhenSneaking
@@ -199,8 +202,8 @@ Diagnostics
 -----------
 
 Errors records standalone custom-menu ACQUIRE_FAILED, RELEASE_FAILED, and
-STALE_RELEASE events together with other Custom HUD operational failures.
+stale-ownership events together with other Custom HUD operational failures.
 
-Verbose additionally records normal Custom HUD hide/release transitions,
-child-level BOUND / UNRESOLVED / RECOVERED events, policy changes, binding
-health, and performance information.
+Verbose additionally records normal Custom HUD hide/release/reassert
+transitions, child-level BOUND / UNRESOLVED / RECOVERED events, policy changes,
+binding health, and performance information.
